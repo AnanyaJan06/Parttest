@@ -87,178 +87,176 @@ function App() {
   };
 
   return (
-    <Container className="mt-5 mb-5">
-      <Row className="justify-content-center">
-        <Col md={8} lg={6}>
-          <Card className="shadow-lg border-0">
-            <Card.Header className="bg-primary text-white text-center">
-              <h3 className="mb-0">Add New Auto Part</h3>
-            </Card.Header>
-            <Card.Body className="p-4">
-              {message && (
-                <Alert variant={messageType} dismissible onClose={() => setMessage('')}>
-                  {message}
-                </Alert>
-              )}
+  <Container className="mt-5 mb-5">
+    <Row className="justify-content-center">
+      <Col md={8} lg={6}>
+        <Card className="shadow border-0">
+          <Card.Header className="bg-dark text-white text-center py-4">
+            <h3 className="mb-0 fw-bold">Add New Auto Part</h3>
+          </Card.Header>
+          <Card.Body className="p-4">
+            {message && (
+              <Alert variant={messageType} dismissible onClose={() => setMessage('')}>
+                {message}
+              </Alert>
+            )}
 
-              <Form onSubmit={handleSubmit}>
-                <Row>
-                  <Col md={12}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Part Name</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="partName"
-                        placeholder="e.g., Front Brake Rotor"
-                        value={formData.partName}
-                        onChange={handleChange}
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
+            <Form onSubmit={handleSubmit}>
+              <Row>
+                <Col md={12}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Part Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="partName"
+                      placeholder="e.g., Front Brake Rotor"
+                      value={formData.partName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
 
-                <Row>
-                  <Col md={6}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Make</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="make"
-                        placeholder="e.g., Toyota"
-                        value={formData.make}
-                        onChange={handleChange}
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col md={6}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Model</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="model"
-                        placeholder="e.g., Camry"
-                        value={formData.model}
-                        onChange={handleChange}
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
+              <Row>
+                <Col md={6}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Make</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="make"
+                      placeholder="e.g., Toyota"
+                      value={formData.make}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={6}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Model</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="model"
+                      placeholder="e.g., Camry"
+                      value={formData.model}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
 
-                <Row>
-                  <Col md={4}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Year</Form.Label>
-                      <Form.Control
-                        type="number"
-                        name="year"
-                        placeholder="e.g., 2023"
-                        value={formData.year}
-                        onChange={handleChange}
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col md={4}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Trim</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="trim"
-                        placeholder="e.g., XSE, Touring"
-                        value={formData.trim}
-                        onChange={handleChange}
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col md={4}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Warranty (optional)</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="warranty"
-                        placeholder="e.g., 24 months"
-                        value={formData.warranty}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
+              <Row>
+                <Col md={4}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Year</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="year"
+                      placeholder="e.g., 2023"
+                      value={formData.year}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={4}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Trim</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="trim"
+                      placeholder="e.g., XSE"
+                      value={formData.trim}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={4}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Warranty (optional)</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="warranty"
+                      placeholder="e.g., 24 months"
+                      value={formData.warranty}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
 
-                <Row>
-                  <Col md={4}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Market Price</Form.Label>
-                      <Form.Control
-                        type="number"
-                        name="marketPrice"
-                        placeholder="0.00"
-                        value={formData.marketPrice}
-                        onChange={handleChange}
-                        step="0.01"
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col md={4}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Margin (%)</Form.Label>
-                      <Form.Control
-                        type="number"
-                        name="margin"
-                        placeholder="e.g., 25"
-                        value={formData.margin}
-                        onChange={handleChange}
-                        step="0.01"
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col md={4}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Shipping Cost</Form.Label>
-                      <Form.Control
-                        type="number"
-                        name="shipping"
-                        placeholder="0.00"
-                        value={formData.shipping}
-                        onChange={handleChange}
-                        step="0.01"
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
+              <Row>
+                <Col md={4}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Market Price</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="marketPrice"
+                      placeholder="0.00"
+                      value={formData.marketPrice}
+                      onChange={handleChange}
+                      step="0.01"
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={4}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Margin (%)</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="margin"
+                      placeholder="e.g., 25"
+                      value={formData.margin}
+                      onChange={handleChange}
+                      step="0.01"
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={4}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="fw-semibold">Shipping Cost</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="shipping"
+                      placeholder="0.00"
+                      value={formData.shipping}
+                      onChange={handleChange}
+                      step="0.01"
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
 
-                <div className="text-center mb-4">
-                  <h5>
-                    Total Price:{' '}
-                    <span className="text-primary fw-bold">
-                      ${formData.totalPrice}
-                    </span>
-                  </h5>
-                </div>
+              <div className="text-center mb-4">
+                <h5 className="text-dark fw-bold">
+                  Total Price: <span className="text-success fs-4">${formData.totalPrice}</span>
+                </h5>
+              </div>
 
-                <div className="d-grid">
-                  <Button
-                    variant="primary"
-                    type="submit"
-                    disabled={loading}
-                    size="lg"
-                  >
-                    {loading ? 'Adding...' : 'Add Part'}
-                  </Button>
-                </div>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-  );
+              <div className="d-grid">
+                <Button
+                  variant="dark"  
+                  type="submit"
+                  disabled={loading}
+                  size="lg"
+                  className="fw-semibold"
+                >
+                  {loading ? 'Adding...' : 'Add Part'}
+                </Button>
+              </div>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  </Container>
+);
 }
 
 export default App;
