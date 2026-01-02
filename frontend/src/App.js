@@ -60,7 +60,8 @@ function App() {
         totalPrice: Number(formData.totalPrice),
       };
 
-      await axios.post('http://localhost:5000/api/parts', payload);
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      await axios.post(`${API_URL}/api/parts`, payload);
 
       setMessage('Part added successfully!');
       setMessageType('success');
